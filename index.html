@@ -425,6 +425,81 @@
   footer { border-top: 1px solid var(--rule); padding: 2rem 0; font-size: 0.85rem; color: rgba(21, 22, 30, 0.6); }
   .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 
+  /* === SDG SECTION === */
+  .sdg-section { padding: 7rem 0; }
+  .sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .sdg-card {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--rule);
+    border-radius: 24px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .sdg-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(21, 22, 30, 0.08);
+  }
+  .sdg-card img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+  .sdg-card-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--coral);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .sdg-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0.5rem 0 1rem;
+  }
+  .sdg-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(21, 22, 30, 0.75);
+  }
+
+  /* === SDG BADGES ON PROJECT CARDS === */
+  .project-sdgs {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    align-items: center;
+  }
+  .project-sdgs-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-right: 0.25rem;
+    font-weight: 500;
+  }
+  .project-sdgs img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
   /* === RESPONSIVE === */
   @media (max-width: 860px) {
     .nav-links { display: none; }
@@ -434,6 +509,8 @@
     .about-card { position: relative; top: 0; }
     .work-grid { grid-template-columns: 1fr; }
     .project:nth-child(1) { grid-column: span 1; }
+    .sdg-grid { grid-template-columns: 1fr; }
+    .sdg-card img { width: 110px; height: 110px; }
     .pub { grid-template-columns: 1fr; gap: 0.5rem; }
     .pub-link { justify-self: start; margin-top: 0.5rem; }
     .skills-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -451,6 +528,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#impact">Impact</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -537,6 +615,12 @@
           <h3 class="project-title">Sewage sludge as <em>lightweight aggregate</em> for low-carbon construction.</h3>
           <p class="project-desc">Industry-funded research developing sintered high-strength lightweight aggregates from sewage sludge and GGBS — a circular alternative to mined materials. Combines microstructural characterisation, mechanical and durability testing, and life-cycle assessment.</p>
         </div>
+        <div class="project-sdgs">
+          <span class="project-sdgs-label">Contributes to</span>
+          <img src="E_PRINT_09.jpg" alt="UN SDG 9 — Industry, Innovation and Infrastructure">
+          <img src="E_PRINT_11.jpg" alt="UN SDG 11 — Sustainable Cities and Communities">
+          <img src="E_PRINT_12.jpg" alt="UN SDG 12 — Responsible Consumption and Production">
+        </div>
       </article>
       <article class="project">
         <span class="project-num">02</span>
@@ -544,6 +628,10 @@
         <div>
           <h3 class="project-title">Durability of <em>CFRP–concrete</em> systems.</h3>
           <p class="project-desc">Long-term bond degradation in acidic, alkaline, and aqueous environments, with Weibull-based reliability modelling for safer retrofitting.</p>
+        </div>
+        <div class="project-sdgs">
+          <span class="project-sdgs-label">Contributes to</span>
+          <img src="E_PRINT_11.jpg" alt="UN SDG 11 — Sustainable Cities and Communities">
         </div>
       </article>
       <article class="project">
@@ -553,6 +641,10 @@
           <h3 class="project-title"><em>Cold-formed steel</em> channel sections.</h3>
           <p class="project-desc">Numerical (ABAQUS) and experimental work on web crippling of high-yield sections, in partnership with Doby Verrolec.</p>
         </div>
+        <div class="project-sdgs">
+          <span class="project-sdgs-label">Contributes to</span>
+          <img src="E_PRINT_09.jpg" alt="UN SDG 9 — Industry, Innovation and Infrastructure">
+        </div>
       </article>
       <article class="project">
         <span class="project-num">04</span>
@@ -561,7 +653,47 @@
           <h3 class="project-title"><em>Fibre-reinforced</em> concrete in aggressive environments.</h3>
           <p class="project-desc">Mechanical and durability performance of glass and natural fibre composites under acidic exposure, with international collaborators.</p>
         </div>
+        <div class="project-sdgs">
+          <span class="project-sdgs-label">Contributes to</span>
+          <img src="E_PRINT_09.jpg" alt="UN SDG 9 — Industry, Innovation and Infrastructure">
+          <img src="E_PRINT_11.jpg" alt="UN SDG 11 — Sustainable Cities and Communities">
+        </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- SDG IMPACT -->
+<section id="impact" class="sdg-section">
+  <div class="container">
+    <span class="section-label">Research Impact</span>
+    <h2 class="section-title">Aligned with the UN <em>Sustainable Development Goals</em>.</h2>
+    <p style="max-width: 720px; font-size: 1.1rem; line-height: 1.6; color: rgba(21, 22, 30, 0.75); margin-bottom: 2.5rem;">
+      My research directly contributes to three UN Sustainable Development Goals through low-carbon construction materials, circular economy practices, and durable infrastructure solutions.
+    </p>
+    <div class="sdg-grid">
+
+      <div class="sdg-card">
+        <img src="E_PRINT_09.jpg" alt="UN SDG 9 — Industry, Innovation and Infrastructure">
+        <span class="sdg-card-num">Goal 09</span>
+        <h3>Industry, Innovation &amp; Infrastructure</h3>
+        <p>Developing novel construction materials, high-performance cold-formed steel sections, and fibre-reinforced composites that support resilient infrastructure and sustainable industrialisation.</p>
+      </div>
+
+      <div class="sdg-card">
+        <img src="E_PRINT_11.jpg" alt="UN SDG 11 — Sustainable Cities and Communities">
+        <span class="sdg-card-num">Goal 11</span>
+        <h3>Sustainable Cities &amp; Communities</h3>
+        <p>CFRP-based retrofitting and durable rehabilitation systems extend the life of existing structures, while resource-efficient materials reduce the environmental footprint of urban construction.</p>
+      </div>
+
+      <div class="sdg-card">
+        <img src="E_PRINT_12.jpg" alt="UN SDG 12 — Responsible Consumption and Production">
+        <span class="sdg-card-num">Goal 12</span>
+        <h3>Responsible Consumption &amp; Production</h3>
+        <p>Valorising sewage sludge — a major global waste stream — into high-strength lightweight aggregates closes a critical waste-to-resource gap in the circular economy.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -612,7 +744,7 @@
       <div class="pub">
         <div class="pub-journal">Structures<small>Q1 · IF 4.3</small></div>
         <div class="pub-body">
-          <div class="pub-title">Web crippling design of cold-formed sigma sections - IOF load case.</div>
+          <div class="pub-title">Web crippling design of cold-formed sigma sections — IOF load case.</div>
           <div class="pub-meta">Thirunavukkarasu, K., Thushanthan, K. et al. — 2025</div>
         </div>
         <a class="pub-link" href="https://doi.org/10.1016/j.istruc.2025.110326" target="_blank" rel="noopener">View DOI →</a>
